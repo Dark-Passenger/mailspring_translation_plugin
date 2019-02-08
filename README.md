@@ -1,18 +1,10 @@
-# mailspring_translation_plugin
-translation plugin for mailspring
+## Phishing Detection
 
-from requests import get
-from json import dumps
+A sample package for Mailspring to detect simple phishing attempts. This package display a simple warning if
+a message's originating address is different from its return address. The warning looks like this:
 
-def getUrl(sourceLang, targetLang, sourceText):
-	return "https://translate.googleapis.com/translate_a/single?client=gtx&sl={}&tl={}&dt=t&q={}".format(sourceLang, targetLang, sourceText)
+![screenshot](./screenshot.png)
 
-url = getUrl('en', 'nl', 'bread')
+#### Who is this for?
 
-response = get(url)
-print(response.text)
-
-res = response.json()
-
-print(res.__class__)
-print("translated text is : ", res[0][0][0])
+This package is our slimmest example package. It's annotated for developers who have no experience with React, Flux, Electron, or N1.
